@@ -10,18 +10,21 @@ using static UnityEngine.UI.Image;
 
 public class MonsterManager : MonoBehaviour
 {
+    public float Maxhealth = 10;
+    private float health;
 
-    public float health = 10;
     public float damageToTower = 1;
 
     public Transform targetObject;
     public Vector3 offset;
 
+    [HideInInspector] public PooledObject pooledObject;
     private Animator animator;
     private DamageUiManager damageUiManager;
 
     private void Start()
     {
+        health = Maxhealth;
         animator = this.GetComponent<Animator>();
         damageUiManager = GameObject.Find("Damage UI Manager").GetComponent<DamageUiManager>();
     }
@@ -45,10 +48,11 @@ public class MonsterManager : MonoBehaviour
         StartCoroutine("DestroyMonster");
     }
 
+    //풀에 넣어서 부활준비
     IEnumerator DestroyMonster()
     {
         yield return new WaitForSeconds(0.4f);
-
-        Destroy(this.gameObject);
+        health = Maxhealth;
+        pooledObject.ReturnToPool();
     }
 }
