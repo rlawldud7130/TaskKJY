@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Hero
   layers:
   - Default
   - TransparentFX
@@ -12,20 +13,20 @@ TagManager:
   - Water
   - UI
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - MonsterLayer1
+  - MonsterLayer2
+  - MonsterLayer3
+  - BoxLayer1
+  - BoxLayer2
+  - BoxLayer3
+  - JumpLayer1
+  - JumpLayer2
+  - JumpLayer3
+  - LandLayer1
+  - LandLayer2
+  - LandLayer3
+  - Bullet
+  - Wall
   - 
   - 
   - 
