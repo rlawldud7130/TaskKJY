@@ -22,12 +22,14 @@ public class MonsterManager : MonoBehaviour
     private Animator animator;
     private DamageUiManager damageUiManager;
 
-    private void Start()
+
+    public void ResetMonster()
     {
         health = Maxhealth;
         animator = this.GetComponent<Animator>();
         damageUiManager = GameObject.Find("Damage UI Manager").GetComponent<DamageUiManager>();
-    }
+        this.GetComponent<MonsterMove>().ResetMonster();
+    }    
 
     //몬스터가 데미지 입게 할때
     public void Hit(float damage)
@@ -45,6 +47,7 @@ public class MonsterManager : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger("Die");
+        this.GetComponent<MonsterMove>().DieMonster();
         StartCoroutine("DestroyMonster");
     }
 

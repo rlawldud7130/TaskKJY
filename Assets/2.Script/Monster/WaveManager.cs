@@ -46,7 +46,7 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-    //웨이브 하나
+    //웨이브으
     private IEnumerator SpawnWave(WaveData waveData)
     {
         for (int i = 0; i < waveData.count; i++)
@@ -58,8 +58,8 @@ public class WaveManager : MonoBehaviour
 
                 //각 몬스터별로 레이어 1~3중에 하나 랜덤으로 지정하기
                 //3겹으로 만들어서 쌓기
-                MonsterMove move = obj.GetComponent<MonsterMove>();
-                move.layer = Random.Range(0, 3) + 1;
+                obj.GetComponent<MonsterMove>().layer = Random.Range(0, 3) + 1;
+                obj.GetComponent<MonsterManager>().ResetMonster();
             }
 
             yield return new WaitForSeconds(1f / waveData.spawnRate);

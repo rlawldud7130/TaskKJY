@@ -837,11 +837,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - monsterPrefab: {fileID: 319310827380095937, guid: e48e7c461a85c463cba5a999afb91a67, type: 3}
-    count: 100
+    count: 1000
     spawnRate: 1.5
   spawnPoint: {fileID: 332368674}
   waveInterval: 3
-  maxNum: 300
+  maxNum: 1000
 --- !u!114 &422547110
 MonoBehaviour:
   m_ObjectHideFlags: 0
