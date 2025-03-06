@@ -29,8 +29,8 @@ public class MonsterMove : MonoBehaviour
 
     void Start()
     {
-        rb = this.transform.GetComponent<Rigidbody2D>();
-        animator = this.transform.GetComponent<Animator>();
+        rb = this.GetComponent<Rigidbody2D>();
+        animator = this.GetComponent<Animator>();
 
         //웨이브 메니저에서 랜덤으로 부여받은 레이어로 몬스터가 충돌처리할 레이어들 세팅
         objLayerMask = (1 << (6 + layer)) | (1 << (9 + layer)) | (1 << (15 + layer));

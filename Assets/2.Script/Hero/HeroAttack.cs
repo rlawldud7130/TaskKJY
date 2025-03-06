@@ -10,11 +10,6 @@ public class HeroAttack : MonoBehaviour
     private GameObject bullet;
     private Animator animator;
 
-    public Transform targetObject;
-    public Vector3 offset;
-
-    private RectTransform rectTransform;
-    private Camera mainCamera;
 
     private void Start()
     {
