@@ -55,7 +55,10 @@ public class MonsterManager : MonoBehaviour
     IEnumerator DestroyMonster()
     {
         yield return new WaitForSeconds(0.4f);
+        this.transform.position = new Vector3(0.0f, -100.0f, 0.0f);
         health = Maxhealth;
+
+        yield return new WaitForSeconds(2.0f);
         pooledObject.ReturnToPool();
     }
 }
